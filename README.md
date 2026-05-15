@@ -1,12 +1,16 @@
 # MiniInterpreter
 i made c-- intrepeter in c
 
+
 to use it
   >> main.exe filename.cnn
 
 and it should work.
 
+
 also i have an example for getting factorial
+
+
 
 the command set goes by:
 
