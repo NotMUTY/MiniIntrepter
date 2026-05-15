@@ -6,8 +6,9 @@ to use it
 
 and it should work.
 
-the command set goes by:
+also i have an example for getting factorial
 
+the command set goes by:
 
 a, b is integer >= 0, $a and $b is constant values.
 
