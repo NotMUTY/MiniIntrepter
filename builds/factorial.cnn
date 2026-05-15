@@ -1,0 +1,28 @@
+
+#mem[0] is result
+imm $1 #mem[0] = 1 
+
+smp $1 #cursor at mem[1]
+imm $6 #calculating 5 factorial
+
+smp $2 #decrementer
+imm $1 #decrement value
+
+#mem[3] = 0 so we can compare
+smp $1 #gonna compare mem[1]
+cgt 3
+njp $32 #halt
+
+mul 1 0 # mem[0] = mem[0] * mem[1]
+
+#decrementing
+sub 1 2
+smp $1
+imm 2
+smp $2 
+imm $1 
+
+jmp $10
+
+prnt 0
+halt $0
