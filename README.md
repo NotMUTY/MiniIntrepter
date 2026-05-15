@@ -2,7 +2,7 @@
 i made c-- intrepeter in c
 
 to use it
-  >> main.exe <filename>.cnn
+  >> main.exe filename.cnn
 
 and it should work.
 
