@@ -51,6 +51,7 @@ jmp a or $a -> sets the instruction pointer to a (if compareFlag equals to 1)
 njp a or $a-> sets the instruction pointer to a (if compareFlag equals to 0)
 
 prnt a or $a -> prints the value of address
+prta a or $a -> prints the ascii value of address
 
 halt a or $a-> quits the program with exit code a
 
