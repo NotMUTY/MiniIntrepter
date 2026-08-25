@@ -1,33 +1,35 @@
-//opertions.h
+//operations.h
 
-void opIp(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opIp(char* arg, char* arg1);
 
-void opGmp(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opGmp(char* arg, char* arg1);
 
-void opSmp(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opSmp(char* arg, char* arg1);
 
-void opImm(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opImm(char* arg, char* arg1);
 
-void opImm(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opImm(char* arg, char* arg1);
 
-void opAdd(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opAdd(char* arg, char* arg1);
 
-void opSub(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opSub(char* arg, char* arg1);
 
-void opMul(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opMul(char* arg, char* arg1);
 
-void opDvd(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opDvd(char* arg, char* arg1);
 
-void opCeq(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opCeq(char* arg, char* arg1);
 
-void opCls(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opCls(char* arg, char* arg1);
 
-void opCgt(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opCgt(char* arg, char* arg1);
 
-void opJmp(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opJmp(char* arg, char* arg1);
 
-void opNjp(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opNjp(char* arg, char* arg1);
 
-void opPrnt(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opPrnt(char* arg, char* arg1);
 
-void opHalt(char* arg, char* arg1, int* mem, int* memp, int* insp, int* cf, int* ef, int* ovrr);
+void opHalt(char* arg, char* arg1);
+
+void setupOps(int* _mem, int* _memp, int* _insp, int* _cf, int* _ef, int* _ovrr);

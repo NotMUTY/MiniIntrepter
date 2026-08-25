@@ -13,8 +13,7 @@
 
 struct Opcode {
     int argCount;
-    void (*opfunc)(char* arg, char* arg1, int* mem,
-                   int* memi, int* insi, int* cf, int* ef, int* ovrr);
+    void (*opfunc)(char* arg, char* arg1);
 };
 
 struct Opcode ip,
@@ -100,7 +99,7 @@ void parseAndExecute(char** instructions, int iLen){
     }
     printf("-----------DEBUGE-----------\n\n\n");
     */
-
+    
     int memory[256] = {0};
     int instructionI = -1;
     int memoryI = 0;
@@ -109,6 +108,7 @@ void parseAndExecute(char** instructions, int iLen){
     int overrideFlag = false;
 
     initOps();
+    setupOps(memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
 
     OP opNum;
 
@@ -177,91 +177,91 @@ void parseAndExecute(char** instructions, int iLen){
         switch (opNum)
         {
         case OP_IP:
-            ip.opfunc(NULL, NULL, memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            ip.opfunc(NULL, NULL);
             if (overrideFlag) break;
             instructionI += ip.argCount;
             break;
 
         case OP_GMP:
-            gmp.opfunc(NULL, NULL, memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            gmp.opfunc(NULL, NULL);
             if (overrideFlag) break;
             instructionI += gmp.argCount;
             break;
 
         case OP_SMP:
-            smp.opfunc(instructions[instructionI + 1], NULL, memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            smp.opfunc(instructions[instructionI + 1], NULL);
             if (overrideFlag) break;
             instructionI += smp.argCount;
             break;
 
         case OP_IMM:
-            imm.opfunc(instructions[instructionI + 1], NULL, memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            imm.opfunc(instructions[instructionI + 1], NULL);
             if (overrideFlag) break;
             instructionI += imm.argCount;
             break;
 
         case OP_ADD:
-            add.opfunc(instructions[instructionI + 1], instructions[instructionI + 2], memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            add.opfunc(instructions[instructionI + 1], instructions[instructionI + 2]);
             if (overrideFlag) break;
             instructionI += add.argCount;
             break;
 
         case OP_SUB:
-            sub.opfunc(instructions[instructionI + 1], instructions[instructionI + 2], memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            sub.opfunc(instructions[instructionI + 1], instructions[instructionI + 2]);
             if (overrideFlag) break;
             instructionI += sub.argCount;
             break;
 
         case OP_MUL:
-            mul.opfunc(instructions[instructionI + 1], instructions[instructionI + 2], memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            mul.opfunc(instructions[instructionI + 1], instructions[instructionI + 2]);
             if (overrideFlag) break;
             instructionI += mul.argCount;
             break;
 
         case OP_DVD:
-            dvd.opfunc(instructions[instructionI + 1], instructions[instructionI + 2], memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            dvd.opfunc(instructions[instructionI + 1], instructions[instructionI + 2]);
             if (overrideFlag) break;
             instructionI += dvd.argCount;
             break;
 
         case OP_CEQ:
-            ceq.opfunc(instructions[instructionI + 1], NULL, memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            ceq.opfunc(instructions[instructionI + 1], NULL);
             if (overrideFlag) break;
             instructionI += ceq.argCount;
             break;
 
         case OP_CLS:
-            cls.opfunc(instructions[instructionI + 1], NULL, memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            cls.opfunc(instructions[instructionI + 1], NULL);
             if (overrideFlag) break;
             instructionI += cls.argCount;
             break;
 
         case OP_CGT:
-            cgt.opfunc(instructions[instructionI + 1], NULL, memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            cgt.opfunc(instructions[instructionI + 1], NULL);
             if (overrideFlag) break;
             instructionI += cgt.argCount;
             break;
 
         case OP_JMP:
-            jmp.opfunc(instructions[instructionI + 1], NULL, memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            jmp.opfunc(instructions[instructionI + 1], NULL);
             if (overrideFlag) break;
             instructionI += jmp.argCount;
             break;
 
         case OP_NJP:
-            njp.opfunc(instructions[instructionI + 1], NULL, memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            njp.opfunc(instructions[instructionI + 1], NULL);
             if (overrideFlag) break;
             instructionI += njp.argCount;
             break;
 
         case OP_PRNT:
-            prnt.opfunc(instructions[instructionI + 1], NULL, memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            prnt.opfunc(instructions[instructionI + 1], NULL);
             if (overrideFlag) break;
             instructionI += prnt.argCount;
             break;
 
         case OP_HALT:
-            halt.opfunc(instructions[instructionI + 1], NULL, memory, &memoryI, &instructionI, &compareFlag, &errFlag, &overrideFlag);
+            halt.opfunc(instructions[instructionI + 1], NULL);
             if (overrideFlag) break;
             instructionI += halt.argCount;
             break;
